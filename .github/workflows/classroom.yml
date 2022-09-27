@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - main
-    paths:
-      - '!README.md'
-      - '!.github/**'
+    paths-ignore:
+      - 'README.md'
+      - '.github/**'
 
 env:
   IMG_URL: https://github.com/os-autograding/testsuits-in-one/raw/gh-pages/fat32.img # 镜像url
