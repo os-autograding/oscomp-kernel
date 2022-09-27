@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - main
-    paths-ignore:
-      - 'README.md'
-      - '.github/*'
+    paths:
+      - '!README.md'
+      - '!.github/**'
 
 env:
   IMG_URL: https://github.com/os-autograding/testsuits-in-one/raw/gh-pages/fat32.img # 镜像url
@@ -59,7 +59,7 @@ jobs:
           qemu-system-riscv64 --version
       - name: build os.bin
         run: |
-          make
+          make all
       - name: run os
         run: |
           wget $IMG_URL -O fat32.img
